@@ -39,7 +39,8 @@ app.post('/post', (req, res) => {
   if (data[req.body.id]) {
     throw new Error("Post exists!")
   }
-  const newPost = {id:parseInt(req.body.id, 10), title: req.body.title, body: req.body.body, comments: []}
+  const newPost = {id:parseInt(req.body.id, 10), title: req.body.title, 
+                  body: req.body.body, comments: []}
   data[req.body.id] = newPost
   res.send(newPost)
 })
